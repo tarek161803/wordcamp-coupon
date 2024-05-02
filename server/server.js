@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const app = require("./app");
-const Participant = require("./models/Participant");
-const Coupon = require("./models/Coupon");
 
 mongoose
   .connect(
