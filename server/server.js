@@ -15,7 +15,7 @@ mongoose
     console.log("error connecting to database");
   });
 
-const port = 8080;
+const port = 3000;
 
 app.listen(port, () => {
   console.log(`app is running on port ${port}`);
