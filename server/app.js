@@ -10,12 +10,12 @@ app.use(cors());
 app.use(express.static("static"));
 app.use(express.json());
 
-app.use("api/participant", participantRouter);
-app.use("api/coupon", couponRouter);
-app.use("api/gift", giftRouter);
+app.use("/api/participant", participantRouter);
+app.use("/api/coupon", couponRouter);
+app.use("/api/gift", giftRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "static/build/index.html"));
+  res.sendFile(path.join(__dirname, "static/index.html"));
 });
 
 module.exports = app;
