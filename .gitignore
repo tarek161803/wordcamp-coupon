@@ -1,0 +1,46 @@
+# Ignore node_modules in both client and server folders
+client/node_modules
+server/node_modules
+
+# Ignore build artifacts
+client/build
+server/build
+
+# Ignore environment variables
+client/.env
+server/.env
+
+# Ignore IDE/Editor specific files
+.vscode
+.idea
+
+# Ignore any logs
+*.log
+
+# Ignore OS generated files
+.DS_Store
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore yarn log
+yarn-debug.log*
+
+# Ignore yarn error log
+yarn-error.log*
+
+# Ignore macOS folder attributes
+._*
+
+# Ignore cache and temp files
+client/.cache/
+server/.cache/
+client/.tmp/
+server/.tmp/
+
+# Ignore coverage directory
+coverage/
+
+# Ignore .env.local file which should only be on your local machine
+client/.env.local
+server/.env.local
