@@ -120,11 +120,14 @@ const Gift = () => {
 
       <div className="pl-10">
         <h3 className="text-xl font-bold">PDF Download</h3>
-        <button onClick={generatePdf} className="block w-full mt-6 text-center py-2 rounded-md bg-blue-600 text-white">
+        <button
+          disabled={pdfGenerating}
+          onClick={generatePdf}
+          className="block w-full mt-6 text-center py-2 rounded-md bg-blue-600 text-white">
           Generate PDF
         </button>
         <a
-          href={process.env.REACT_APP_API_URL + "/output.pdf"}
+          href={"/output.pdf"}
           target="_blank"
           rel="noreferrer"
           className="block w-full mt-6 text-center py-2 rounded-md bg-blue-600 text-white">
