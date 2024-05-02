@@ -35,7 +35,7 @@ const createNewParticipant = async (req, res) => {
     const updateGiftStatus = updateGiftStatusService(giftStatus._id, {
       [participantGift]: giftStatus[participantGift] - 1,
     });
-    // sendMail(req.body.email, unusedCoupon.coupon);
+    sendMail(req.body.email, unusedCoupon.coupon);
     res.status(201).json({ status: "success", message: "Registration Successful", data: participant });
   } catch (error) {
     res
