@@ -84,13 +84,14 @@ const sendMail = async (user) => {
     </style>
   </body>
 </html>
-
 `,
   };
 
   transporter.sendMail(options, function (error, info) {
     if (error) {
       console.log(error.message);
+    } else {
+      console.log(info);
     }
   });
 };
