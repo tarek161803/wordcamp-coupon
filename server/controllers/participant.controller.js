@@ -6,7 +6,7 @@ const {
   validateInformationService,
 } = require("../services/participant.services");
 const { getUnusedCouponService, updateCouponService } = require("../services/coupon.services");
-const { sendMail } = require("../utils/sendMail");
+const { sendMail } = require("../utils/mail");
 const { getGiftsStatusService, updateGiftStatusService } = require("../services/gift.services");
 
 const createNewParticipant = async (req, res) => {
