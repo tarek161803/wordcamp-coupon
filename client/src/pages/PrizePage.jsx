@@ -20,9 +20,9 @@ const PrizePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // if (!state?.gift) {
-    //   navigate("/");
-    // }
+    if (!state?.gift) {
+      navigate("/");
+    }
     if (state?.gift) {
       if (state.gift === "tshirt") {
         setPrize(tshirt);
@@ -36,11 +36,11 @@ const PrizePage = () => {
     }
   }, [state]);
 
-  // useEffect(() => {
-  //   if (!participant.name.trim() || !participant.email.trim() || !participant.phone.trim()) {
-  //     navigate("/");
-  //   }
-  // }, [participant]);
+  useEffect(() => {
+    if (!participant.name.trim() || !participant.email.trim() || !participant.phone.trim()) {
+      navigate("/");
+    }
+  }, [participant]);
 
   useEffect(() => {
     window.addEventListener("popstate", () => {
