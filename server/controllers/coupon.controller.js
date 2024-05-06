@@ -28,7 +28,7 @@ const seedMultipleCoupon = async (req, res) => {
 
     for (let i = 1; i <= count; i++) {
       const couponValue = couponStart + i;
-      coupons.push({ coupon: couponValue, participant: "6638a2187abb0760cf51d704" });
+      coupons.push({ coupon: couponValue });
     }
 
     const result = await seedCoupon(coupons);
