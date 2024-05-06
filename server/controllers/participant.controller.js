@@ -25,6 +25,7 @@ const createNewParticipant = async (req, res) => {
     }
 
     const randomIndex = Math.floor(Math.random() * availableGift.length);
+
     const participantGift = availableGift[randomIndex];
     const unusedCoupon = await getUnusedCouponService();
     if (!unusedCoupon) {
