@@ -31,9 +31,22 @@ export default function ParticipantInfo() {
     dispatch(updateParticipantInterest(e.target.name));
   };
 
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   const handleNext = async (e) => {
     e.preventDefault();
-    if (!participant.name.trim() || !participant.email.trim() || !participant.phone.trim()) {
+    if (
+      !participant.name.trim() ||
+      !participant.email.trim() ||
+      !participant.phone.trim() ||
+      !validateEmail(participant.email)
+    ) {
       setError(true);
       return;
     }
@@ -106,8 +119,8 @@ export default function ParticipantInfo() {
           </div>
           {error && (
             <div className="flex items-center gap-2">
-              <img className="h-5" src={warningImage} alt="warning" />
-              <p>Please fill-up all the above information.</p>
+              <img className="h-4" src={warningImage} alt="warning" />
+              <p className="text-sm">Please fill all fields with valid information.</p>
             </div>
           )}
           <button onClick={handleNext} className="bg-blue-700 block w-full rounded-xl text-white text-center p-4">
