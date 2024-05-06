@@ -68,13 +68,13 @@ const sendMail = async (user) => {
         </p>
       </div>
 
-      <div style="width: 84px; margin-bottom: 12px; margin: auto">
+      <div style="width: 86px; margin-bottom: 12px; margin: auto">
         <a style="text-decoration: none" href="https://www.facebook.com/webappick/">
           <img style="width: 24px" src="https://www.webappick.info/image/facebook.png" alt="facebook" />
         </a>
 
         <a style="margin-inline: 0px; text-decoration: none" href="https://bd.linkedin.com/company/webappick">
-          <img style="width: 24px" src="https://www.webappick.info/image/linkedin.png" alt="facebook" />
+          <img style="width: 26px" src="https://www.webappick.info/image/linkedin.png" alt="facebook" />
         </a>
 
         <a style="text-decoration: none" href="https://twitter.com/webappick">

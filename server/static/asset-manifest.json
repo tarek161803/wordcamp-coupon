@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.c1f140e8.css",
-    "main.js": "/static/js/main.c09392cf.js",
+    "main.css": "/static/css/main.489ceb83.css",
+    "main.js": "/static/js/main.c34c9137.js",
     "static/media/tshirt.png": "/static/media/tshirt.5039d425c3a2b768e5f4.png",
     "static/media/notepad.png": "/static/media/notepad.e025de4d64ca20cc4e67.png",
+    "static/media/gifts.png": "/static/media/gifts.c7d1e183c73ca63ad0e6.png",
     "static/media/sponsor.png": "/static/media/sponsor.520ed4fdbc052256465b.png",
     "static/media/spin.png": "/static/media/spin.d005155778e8fc1a61c4.png",
     "static/media/confetti.png": "/static/media/confetti.2b489fa013953d58f7eb.png",
@@ -11,11 +12,12 @@
     "static/media/logo.png": "/static/media/logo.05de61ac3d45e232cb7f.png",
     "static/media/logo_white.png": "/static/media/logo_white.f005d9e5fb870841f215.png",
     "index.html": "/index.html",
-    "main.c1f140e8.css.map": "/static/css/main.c1f140e8.css.map",
-    "main.c09392cf.js.map": "/static/js/main.c09392cf.js.map"
+    "static/media/share.svg": "/static/media/share.0b6a028b258fdd2a2f70ec9a4067d1b1.svg",
+    "main.489ceb83.css.map": "/static/css/main.489ceb83.css.map",
+    "main.c34c9137.js.map": "/static/js/main.c34c9137.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1f140e8.css",
-    "static/js/main.c09392cf.js"
+    "static/css/main.489ceb83.css",
+    "static/js/main.c34c9137.js"
   ]
 }

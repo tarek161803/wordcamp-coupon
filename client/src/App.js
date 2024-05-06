@@ -9,6 +9,7 @@ import Coupon from "./pages/Admin/Coupon";
 import Dashboard from "./pages/Admin/Dashboard";
 import Gift from "./pages/Admin/Gift";
 import Search from "./pages/Admin/Search";
+import GetStarted from "./pages/GetStarted";
 import KeepInTouch from "./pages/KeepInTouch";
 import ParticipantInfo from "./pages/ParticipantInfo";
 import PrizePage from "./pages/PrizePage";
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <GetStarted />,
+      },
+      {
+        path: "/info",
         element: <ParticipantInfo />,
       },
       {

@@ -5,11 +5,11 @@ import { toast } from "react-toastify";
 import warningImage from "../assets/images/warning.png";
 import Checkbox from "../components/Checkbox";
 import InputGroup from "../components/InputGroup";
-import FormHeader from "../components/PageHeader";
+import PageHeader from "../components/PageHeader";
 import { useValidateInformationMutation } from "../features/api/participantApi";
 import { updateParticipantInterest, updateParticipantValue } from "../features/participant/participantSlice";
 
-export default function ParticipantInfo({ id = "contact" }) {
+export default function ParticipantInfo() {
   const navigate = useNavigate();
   const participant = useSelector((state) => state.participant);
   const dispatch = useDispatch();
@@ -48,9 +48,9 @@ export default function ParticipantInfo({ id = "contact" }) {
   };
 
   return (
-    <div id={id} className="flex z-10 relative flex-col mt-3 mb-24">
+    <div className="flex z-10 relative flex-col mt-3 mb-24">
       <div className="px-6">
-        <FormHeader title="Growth Partner for WooCommerce Businesses Across the Globe" />
+        <PageHeader title="Growth Partner for WooCommerce Businesses Across the Globe" />
         <form className="php-email-form space-y-4">
           <InputGroup
             label="Name"
