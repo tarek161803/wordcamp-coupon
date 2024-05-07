@@ -69,7 +69,7 @@ const PrizePage = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/image/${linkImage}.png&hashtag=#WebAppick`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/pages/tshirt.html&hashtag=%23WebAppick`}
             className="flex justify-center gap-2  bg-blue-600 w-full rounded-xl text-white text-center p-3">
             <img src={share} alt="share" />
             <span>Share On Facebook</span>
