@@ -59,8 +59,8 @@ const PrizePage = () => {
       </div>
 
       <div className="relative z-20 px-6 mb-20">
-        <div className="flex flex-col items-center mx-8 mt-10 bg-white p-6 rounded-2xl border border-blue-500">
-          <img className="w-52 mb-6" src={prize} alt="Winning Gift" />
+        <div className="flex flex-col items-center mx-8 mt-10 bg-white px-6 py-6 rounded-2xl border border-blue-500">
+          <img className="mb-8" src={prize} alt="Winning Gift" />
           <p className="text-center text-gray-800 text-lg font-medium">
             Congratulations! <br /> You have won a <span className="capitalize">{state?.gift}</span>
           </p>
