@@ -51,7 +51,7 @@ const sendMail = async (user) => {
           <span style="color: #0088f7; font-weight: 700">Win an iPad</span> at our bonus raffle draw
           <span style="color: #dd40b3; font-weight: 700">Today at 4 PM!</span>
         </p>
-        <p style="margin-top: 24px; color: #0088f7; font-weight: 700">Coupon Code - ${user.coupon}</p>
+        <p style="margin-top: 24px; color: #0088f7; font-weight: 700">Your Token - ${user.coupon}</p>
         <p style="margin-top: 24px">
           We loved meeting you. Stay tuned for more updates and the cool swag reveal. See you at the next WordCamp,
           champ!

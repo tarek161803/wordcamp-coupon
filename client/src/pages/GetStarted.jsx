@@ -27,7 +27,7 @@ const GetStarted = () => {
               2. Follow Our Social Media Channels.
             </p>
             <p className="bg-blue-100 border text-sm border-blue-200 rounded-lg px-4 py-2">
-              3. Spin for your swag by share it on your Facebook, don't forget to tag Webappick.
+              3. Spin for your swag by share it on your Facebook, don't forget to mention Webappick.
             </p>
             <p className="bg-blue-100 border text-sm border-blue-200 rounded-lg px-4 py-2">
               4. Show the Post at Our Stall & Receive Your Swag.
