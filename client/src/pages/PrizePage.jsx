@@ -16,7 +16,7 @@ const PrizePage = () => {
   const dispatch = useDispatch();
 
   const [prize, setPrize] = useState("");
-  const [linkImage, setLinkImage] = useState("");
+  const [link, setLink] = useState("");
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -27,15 +27,15 @@ const PrizePage = () => {
     if (state?.gift) {
       if (state.gift === "tshirt") {
         setPrize(tshirt);
-        setLinkImage("tshirt");
+        setLink("tshirt");
       }
       if (state.gift === "notepad") {
         setPrize(notepad);
-        setLinkImage("notepad");
+        setLink("notepad");
       }
       if (state.gift === "sticker") {
         setPrize(sticker);
-        setLinkImage("sticker");
+        setLink("sticker");
       }
     }
   }, [state]);
@@ -60,7 +60,7 @@ const PrizePage = () => {
 
       <div className="relative z-20 px-6 mb-20">
         <div className="flex flex-col items-center mx-8 mt-10 bg-white p-6 rounded-2xl border border-blue-500">
-          <img className="w-52 mb-6" src={prize} alt="" />
+          <img className="w-52 mb-6" src={prize} alt="Winning Gift" />
           <p className="text-center text-gray-800 text-lg font-medium">
             Congratulations! <br /> You have won a <span className="capitalize">{state?.gift}</span>
           </p>
@@ -69,7 +69,7 @@ const PrizePage = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/pages/tshirt.html&hashtag=%23WebAppick`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/pages/${link}.html&hashtag=%23WebAppick`}
             className="flex justify-center gap-2  bg-blue-600 w-full rounded-xl text-white text-center p-3">
             <img src={share} alt="share" />
             <span>Share On Facebook</span>

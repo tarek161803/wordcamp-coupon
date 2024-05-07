@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.53c4cf03.css",
-    "main.js": "/static/js/main.2776fca1.js",
-    "static/media/tshirt.png": "/static/media/tshirt.5039d425c3a2b768e5f4.png",
-    "static/media/notepad.png": "/static/media/notepad.e025de4d64ca20cc4e67.png",
+    "main.js": "/static/js/main.7572e296.js",
+    "static/media/notepad.png": "/static/media/notepad.2f6f173cf6133b55d360.png",
     "static/media/gifts.png": "/static/media/gifts.c7d1e183c73ca63ad0e6.png",
+    "static/media/spin.png": "/static/media/spin.31a0119571ab94817d66.png",
     "static/media/sponsor.png": "/static/media/sponsor.520ed4fdbc052256465b.png",
-    "static/media/spin.png": "/static/media/spin.d005155778e8fc1a61c4.png",
+    "static/media/tshirt.png": "/static/media/tshirt.4211fe97171f1d3d5522.png",
+    "static/media/sticker.png": "/static/media/sticker.b00d283912208881d235.png",
     "static/media/confetti.png": "/static/media/confetti.2b489fa013953d58f7eb.png",
-    "static/media/sticker.png": "/static/media/sticker.0d5b9e0a89fac27d355c.png",
     "static/media/logo.png": "/static/media/logo.05de61ac3d45e232cb7f.png",
     "static/media/logo_white.png": "/static/media/logo_white.f005d9e5fb870841f215.png",
     "index.html": "/index.html",
     "static/media/share.svg": "/static/media/share.0b6a028b258fdd2a2f70ec9a4067d1b1.svg",
     "main.53c4cf03.css.map": "/static/css/main.53c4cf03.css.map",
-    "main.2776fca1.js.map": "/static/js/main.2776fca1.js.map"
+    "main.7572e296.js.map": "/static/js/main.7572e296.js.map"
   },
   "entrypoints": [
     "static/css/main.53c4cf03.css",
-    "static/js/main.2776fca1.js"
+    "static/js/main.7572e296.js"
   ]
 }
