@@ -44,7 +44,7 @@ const createNewParticipant = async (req, res) => {
       coupon: unusedCoupon.coupon,
     });
     const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, { participant: participant._id });
-    const updateGiftStatus = updateGiftStatusService(giftStatus._id, {
+    const updateGiftStatus = await updateGiftStatusService(giftStatus._id, {
       [participantGift]: giftStatus[participantGift] - 1,
     });
     sendMail({ email: req.body.email, name: req.body.name, coupon: unusedCoupon.coupon, swag: participantGift });

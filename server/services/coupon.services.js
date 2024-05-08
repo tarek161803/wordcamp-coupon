@@ -47,8 +47,17 @@ const getAllParticipantCoupons = async () => {
   return result;
 };
 
+let isUpdating = false;
+
 const getUnusedCouponService = async () => {
   let result;
+  if (isUpdating) {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    return getUnusedCouponService();
+  }
+
+  isUpdating = true;
+
   const session = await Coupon.startSession();
   session.startTransaction();
   try {
@@ -59,6 +68,8 @@ const getUnusedCouponService = async () => {
     throw error;
   } finally {
     session.endSession();
+
+    isUpdating = false;
   }
   return result;
 };
