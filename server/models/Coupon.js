@@ -9,8 +9,8 @@ const couponSchema = new mongoose.Schema(
       unique: true,
     },
     participant: {
-      type: ObjectId,
-      default: null,
+      type: mongoose.Schema.Types.Mixed,
+      default: false,
       ref: "Participant",
     },
   },

@@ -13,6 +13,11 @@ const { getGiftsStatusService, updateGiftStatusService } = require("../services/
 const createNewParticipant = async (req, res) => {
   try {
     const participantInfo = req.body;
+
+    const unusedCoupon = await getUnusedCouponService();
+    if (!unusedCoupon) {
+      throw new Error("No Coupon Available");
+    }
     const giftStatus = await getGiftsStatusService();
     const availableGift = [];
     if (giftStatus.tshirt > 0) {
@@ -26,22 +31,19 @@ const createNewParticipant = async (req, res) => {
     }
 
     if (availableGift.length === 0) {
+      const resetStatus = await updateCouponService(unusedCoupon._id, { participant: false });
       throw new Error("No Gift Available");
     }
 
     const randomIndex = Math.floor(Math.random() * availableGift.length);
-
     const participantGift = availableGift[randomIndex];
-    const unusedCoupon = await getUnusedCouponService();
-    if (!unusedCoupon) {
-      throw new Error("No Coupon Available");
-    }
+
     const participant = await createParticipantService({
       ...participantInfo,
       gift: participantGift,
       coupon: unusedCoupon.coupon,
     });
-    const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, participant._id);
+    const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, { participant: participant._id });
     const updateGiftStatus = updateGiftStatusService(giftStatus._id, {
       [participantGift]: giftStatus[participantGift] - 1,
     });

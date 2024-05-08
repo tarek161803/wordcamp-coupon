@@ -13,7 +13,7 @@ const getCouponStatusService = async () => {
         total: { $sum: 1 },
         participant: {
           $addToSet: {
-            $cond: [{ $eq: ["$participant", null] }, null, "$participant"],
+            $cond: [{ $eq: ["$participant", false] }, null, "$participant"],
           },
         },
       },
@@ -43,17 +43,28 @@ const getMaxCoupon = async () => {
 };
 
 const getAllParticipantCoupons = async () => {
-  const result = Coupon.find({ participant: { $ne: null } });
+  const result = Coupon.find({ participant: { $ne: false } });
   return result;
 };
 
 const getUnusedCouponService = async () => {
-  const result = await Coupon.findOne({ participant: null }).exec();
+  let result;
+  const session = await Coupon.startSession();
+  session.startTransaction();
+  try {
+    result = await Coupon.findOneAndUpdate({ participant: false }, { participant: true }, { new: true, session });
+    await session.commitTransaction();
+  } catch (error) {
+    await session.abortTransaction();
+    throw error;
+  } finally {
+    session.endSession();
+  }
   return result;
 };
 
 const updateCouponService = async (id, participant) => {
-  const result = await Coupon.updateOne({ _id: id }, { participant });
+  const result = await Coupon.updateOne({ _id: id }, participant);
   return result;
 };
 
