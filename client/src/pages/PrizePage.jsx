@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import chalan from "../assets/images/chalan_pro.png";
 import confetti from "../assets/images/confetti.png";
 import ctxFeed from "../assets/images/ctx_feed.png";
@@ -52,6 +54,11 @@ const PrizePage = () => {
     });
   });
 
+  const handleLinkCopy = () => {
+    window.navigator.clipboard.writeText(`https://www.webappick.info/pages/${link}_final.html`);
+    toast.success("Link Copied");
+  };
+
   return (
     <div>
       <div className="fixed flex justify-center items-center top-0 left-0 right-0 bg-white">
@@ -66,14 +73,21 @@ const PrizePage = () => {
           </p>
         </div>
         <div className="mt-8">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/pages/${link}_final.html&hashtag=%23WebAppick`}
-            className="flex justify-center gap-2  bg-blue-600 w-full rounded-xl text-white text-center p-3">
-            <img src={share} alt="share" />
-            <span>Share On Facebook</span>
-          </a>
+          <div className="flex gap-3">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://www.webappick.info/pages/${link}_final.html&hashtag=%23WebAppick`}
+              className="flex justify-center gap-2  bg-blue-600 w-full rounded-xl text-white text-center p-3">
+              <img src={share} alt="share" />
+              <span>Share On Facebook</span>
+            </a>
+
+            <button onClick={handleLinkCopy} className="w-14 bg-gray-100 rounded-xl flex justify-center items-center">
+              <ClipboardDocumentIcon className="h-6 w-6 text-gray-800" />
+            </button>
+          </div>
+
           <p className="text-center font-bold text-xl text-gray-800 mt-5">Thank You For Your Participation!</p>
         </div>
 
