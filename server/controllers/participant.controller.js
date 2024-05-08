@@ -4,6 +4,7 @@ const {
   getParticipantCountService,
   getLastParticipantService,
   validateInformationService,
+  searchParticipantByEmailService,
 } = require("../services/participant.services");
 const { getUnusedCouponService, updateCouponService } = require("../services/coupon.services");
 const { sendMail } = require("../utils/mail");
@@ -24,6 +25,10 @@ const createNewParticipant = async (req, res) => {
       availableGift.push("sticker");
     }
 
+    if (availableGift.length === 0) {
+      throw new Error("No Gift Available");
+    }
+
     const randomIndex = Math.floor(Math.random() * availableGift.length);
 
     const participantGift = availableGift[randomIndex];
@@ -31,7 +36,11 @@ const createNewParticipant = async (req, res) => {
     if (!unusedCoupon) {
       throw new Error("No Coupon Available");
     }
-    const participant = await createParticipantService({ ...participantInfo, gift: participantGift });
+    const participant = await createParticipantService({
+      ...participantInfo,
+      gift: participantGift,
+      coupon: unusedCoupon.coupon,
+    });
     const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, participant._id);
     const updateGiftStatus = updateGiftStatusService(giftStatus._id, {
       [participantGift]: giftStatus[participantGift] - 1,
@@ -85,10 +94,21 @@ const validateInformation = async (req, res) => {
   }
 };
 
+const searchParticipant = async (req, res) => {
+  try {
+    const email = req.body.email;
+    const result = await searchParticipantByEmailService(email);
+    res.status(200).json({ status: "success", message: "Participant Search Result", result });
+  } catch (error) {
+    res.status(400).json({ status: "failed", message: "Something Went Wrong", error: error.message });
+  }
+};
+
 module.exports = {
   createNewParticipant,
   cleanAllParticipant,
   getParticipantCount,
   getLastParticipant,
   validateInformation,
+  searchParticipant,
 };

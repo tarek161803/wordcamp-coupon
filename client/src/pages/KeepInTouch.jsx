@@ -15,6 +15,7 @@ const KeepInTouch = () => {
   const [agree, setAgree] = useState(false);
   const [warning, setWarning] = useState(false);
   const [createParticipant, { isLoading }] = useCreateParticipantMutation();
+  const [customLoading, setCustomLoading] = useState(false);
 
   const participant = useSelector((state) => state.participant);
 
@@ -36,19 +37,25 @@ const KeepInTouch = () => {
       return;
     }
     try {
+      setCustomLoading(true);
       const result = await createParticipant(participant).unwrap();
       if (result.status === "success") {
-        navigate("/prize", {
-          replace: true,
-          state: {
-            gift: result.data.gift,
-          },
-        });
+        setTimeout(() => {
+          setCustomLoading(false);
+          navigate("/prize", {
+            replace: true,
+            state: {
+              gift: result.data.gift,
+            },
+          });
+        }, 1500);
       } else {
-        toast.error("Something Went Wrong!");
+        setCustomLoading(false);
+        toast.error(result.error.message || "Something Went Wrong!");
       }
     } catch (error) {
-      toast.error("Something Went Wrong!");
+      setCustomLoading(false);
+      toast.error(error.data.error.message || "Something Went Wrong!");
     }
   };
 
@@ -82,7 +89,7 @@ const KeepInTouch = () => {
                   <CheckIcon />
                 </span>
                 <span className={`${!warning ? "text-gray-800" : "text-red-600"}`}>
-                  I've interact with the above platforms.
+                  I've interacted with the above platforms.
                 </span>
               </label>
             </div>
@@ -98,7 +105,7 @@ const KeepInTouch = () => {
           </div>
         </div>
       </div>
-      {isLoading && (
+      {(isLoading || customLoading) && (
         <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-gray-900/80 z-50">
           <div className="w-80 h-80 animate-spin">
             <img className="" src={spin} alt="spin" />

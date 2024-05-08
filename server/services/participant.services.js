@@ -25,10 +25,16 @@ const validateInformationService = async (data) => {
   return result;
 };
 
+const searchParticipantByEmailService = async (email) => {
+  const result = await Participant.findOne({ email });
+  return result;
+};
+
 module.exports = {
   createParticipantService,
   cleanParticipantTableService,
   getParticipantCountService,
   getLastParticipantService,
   validateInformationService,
+  searchParticipantByEmailService,
 };

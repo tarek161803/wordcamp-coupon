@@ -56,6 +56,7 @@ const sendMail = async (user) => {
           We loved meeting you. Stay tuned for more updates and the cool swag reveal. See you at the next WordCamp,
           champ!
         </p>
+        <p style="margin-top: 24px">T&C: Please follow all the instructions to become eligible for the raffle draw.</p>
         <p style="margin-top: 24px; margin-bottom: 6px">See you online</p>
         <p style="font-style: italic; margin: 0px">Webappick</p>
       </div>

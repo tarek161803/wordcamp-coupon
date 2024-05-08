@@ -13,9 +13,10 @@ const LastParticipant = () => {
       {data?.result &&
         data?.result?.map((participant) => (
           <div key={participant._id} className="bg-blue-100 py-4 px-6 mb-4 rounded-md">
-            <p>{participant.name}</p>
-            <p>{participant.email}</p>
-            <p>{participant.phone}</p>
+            <p>Name: {participant.name}</p>
+            <p>Email: {participant.email}</p>
+            <p>Phone: {participant.phone}</p>
+            <p>Coupon: {participant.coupon}</p>
             <p className="capitalize">Gift: {participant.gift}</p>
           </div>
         ))}

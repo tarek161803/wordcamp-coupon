@@ -37,6 +37,13 @@ export const participantApi = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    searchParticipant: builder.mutation({
+      query: (data) => ({
+        url: "participant/search",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -46,4 +53,5 @@ export const {
   useParticipantStatusQuery,
   useGetLastParticipantsQuery,
   useValidateInformationMutation,
+  useSearchParticipantMutation,
 } = participantApi;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSearchCouponMutation } from "../../features/api/couponApi";
+import SearchParticipant from "./Components/SearchParticipant";
 
 const Search = () => {
   const [coupon, setCoupon] = useState("");
@@ -14,38 +15,42 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <div className="flex gap-4">
-        <input
-          value={coupon}
-          onChange={(e) => {
-            setCoupon(e.target.value);
-          }}
-          className="p-2 border border-gray-600 rounded"
-          type="text"
-          placeholder="Coupon Code"
-        />
-        <button
-          disabled={isLoading}
-          onClick={handleSearch}
-          className="bg-blue-500 w-40 rounded px-6 text-white border border-blue-500">
-          {isLoading ? "Searching..." : "Search"}
-        </button>
-      </div>
+    <div className="grid grid-cols-2 gap-10">
+      <div>
+        <div className="flex gap-4">
+          <input
+            value={coupon}
+            onChange={(e) => {
+              setCoupon(e.target.value);
+            }}
+            className="p-2 border flex-grow border-gray-600 rounded"
+            type="text"
+            placeholder="Coupon Code"
+          />
+          <button
+            disabled={isLoading}
+            onClick={handleSearch}
+            className="bg-blue-500 w-40 rounded px-6 text-white border border-blue-500">
+            {isLoading ? "Searching..." : "Search"}
+          </button>
+        </div>
 
-      <div className="mt-4">
-        {searchResult?.participant ? (
-          <div>
-            <p>Name: {searchResult.participant.name}</p>
-            <p>Email: {searchResult.participant.email}</p>
-            <p>Phone: {searchResult.participant.phone}</p>
-          </div>
-        ) : (
-          <div>
-            <p>No Result Found</p>
-          </div>
-        )}
+        <div className="mt-4">
+          {searchResult?.participant ? (
+            <div>
+              <p>Name: {searchResult.participant.name}</p>
+              <p>Email: {searchResult.participant.email}</p>
+              <p>Phone: {searchResult.participant.phone}</p>
+              <p>Coupon: {searchResult.participant.coupon}</p>
+            </div>
+          ) : (
+            <div>
+              <p>No Result Found</p>
+            </div>
+          )}
+        </div>
       </div>
+      <SearchParticipant />
     </div>
   );
 };

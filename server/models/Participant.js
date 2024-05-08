@@ -24,6 +24,9 @@ const participantSchema = new mongoose.Schema(
     gift: {
       type: String,
     },
+    coupon: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );
