@@ -44,7 +44,7 @@ const createNewParticipant = async (req, res) => {
     });
     const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, { participant: participant._id });
     const updateGiftStatus = await updateGiftStatusService(giftStatus._id, participantGift);
-    // sendMail({ email: req.body.email, name: req.body.name, coupon: unusedCoupon.coupon, swag: participantGift });
+    sendMail({ email: req.body.email, name: req.body.name, coupon: unusedCoupon.coupon, swag: participantGift });
     res.status(201).json({ status: "success", message: "Registration Successful", data: participant });
   } catch (error) {
     res
