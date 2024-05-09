@@ -15,7 +15,7 @@ const SearchParticipant = () => {
 
   return (
     <div>
-      <div className="flex gap-4">
+      <div className="flex flex-col lg:flex-row gap-2 lg:gap-4">
         <input
           value={email}
           onChange={(e) => {
@@ -28,7 +28,7 @@ const SearchParticipant = () => {
         <button
           disabled={isLoading}
           onClick={handleSearch}
-          className="bg-blue-500 w-40 rounded px-6 text-white border border-blue-500">
+          className="bg-blue-500 lg:w-40 rounded px-6 py-2 text-white border border-blue-500">
           {isLoading ? "Searching..." : "Search"}
         </button>
       </div>

@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div>
       {!isLoading && (
-        <div className="w-72 bg-blue-600 text-white rounded-2xl p-8">
+        <div className="lg:w-72 bg-blue-600 text-white rounded-2xl p-8">
           <p className="text-lg">Total Participant</p>
           <p className="text-4xl font-bold mt-5">{data.count}</p>
         </div>

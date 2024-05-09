@@ -16,9 +16,9 @@ function classNames(...classes) {
 
 const Admin = () => {
   return (
-    <div className="grid grid-cols-12 min-h-screen">
-      <div className="flex col-span-2 grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
-        <div className="flex h-16 shrink-0 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-12 lg:min-h-screen">
+      <div className="flex lg:col-span-2 grow flex-col gap-y-5 overflow-y-auto bg-gray-900 py-4 px-4 lg:px-6">
+        <div className="hidden lg:flex h-16 shrink-0 items-center">
           <img className="h-8 w-auto" src={webappickIcon} alt="WebAppick" />
         </div>
         <nav className="flex flex-1 flex-col">
@@ -47,7 +47,7 @@ const Admin = () => {
         </nav>
       </div>
 
-      <div className="col-span-10 p-8">
+      <div className="lg:col-span-10 p-2 lg:p-8">
         <Outlet />
       </div>
     </div>

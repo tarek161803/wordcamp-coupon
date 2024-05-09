@@ -13,7 +13,6 @@ const { getGiftsStatusService, updateGiftStatusService } = require("../services/
 const createNewParticipant = async (req, res) => {
   try {
     const participantInfo = req.body;
-
     const unusedCoupon = await getUnusedCouponService();
     if (!unusedCoupon) {
       throw new Error("No Coupon Available");
@@ -44,10 +43,8 @@ const createNewParticipant = async (req, res) => {
       coupon: unusedCoupon.coupon,
     });
     const setParticipantIdOnCouponTable = await updateCouponService(unusedCoupon._id, { participant: participant._id });
-    const updateGiftStatus = await updateGiftStatusService(giftStatus._id, {
-      [participantGift]: giftStatus[participantGift] - 1,
-    });
-    sendMail({ email: req.body.email, name: req.body.name, coupon: unusedCoupon.coupon, swag: participantGift });
+    const updateGiftStatus = await updateGiftStatusService(giftStatus._id, participantGift);
+    // sendMail({ email: req.body.email, name: req.body.name, coupon: unusedCoupon.coupon, swag: participantGift });
     res.status(201).json({ status: "success", message: "Registration Successful", data: participant });
   } catch (error) {
     res

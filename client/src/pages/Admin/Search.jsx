@@ -15,9 +15,9 @@ const Search = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
       <div>
-        <div className="flex gap-4">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-4">
           <input
             value={coupon}
             onChange={(e) => {
@@ -30,7 +30,7 @@ const Search = () => {
           <button
             disabled={isLoading}
             onClick={handleSearch}
-            className="bg-blue-500 w-40 rounded px-6 text-white border border-blue-500">
+            className=" bg-blue-500 lg:w-40 rounded px-6 py-2 text-white border border-blue-500">
             {isLoading ? "Searching..." : "Search"}
           </button>
         </div>

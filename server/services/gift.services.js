@@ -17,8 +17,8 @@ const getGiftsStatusService = async () => {
   return giftData[0] || { tshirt: 0, notepad: 0, sticker: 0 };
 };
 
-const updateGiftStatusService = async (id, data) => {
-  const result = await Gift.updateOne({ _id: id }, data);
+const updateGiftStatusService = async (id, property) => {
+  const result = await Gift.findOneAndUpdate({ _id: id }, { $inc: { [property]: -1 } });
 };
 
 module.exports = { createOrUpdateGiftService, getGiftsStatusService, updateGiftStatusService };

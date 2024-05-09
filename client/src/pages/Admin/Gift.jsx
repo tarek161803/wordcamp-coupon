@@ -55,8 +55,8 @@ const Gift = () => {
   }, [data]);
 
   return (
-    <div className="grid grid-cols-3 divide-x divide-gray-400">
-      <div className="mr-10">
+    <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-400">
+      <div className="lg:mr-10">
         <InputGroup
           label="T-Shirt"
           onChange={handleChange}
@@ -107,7 +107,7 @@ const Gift = () => {
           {isLoading ? "Updating..." : "Update Gift"}
         </button>
       </div>
-      <div className="pl-10">
+      <div className="mt-6 lg:mt-0 pt-6 lg:pt-0 lg:pl-10">
         <h3 className="text-xl font-bold">Status</h3>
         {!statusLoading && (
           <div className="mt-4">
@@ -118,7 +118,7 @@ const Gift = () => {
         )}
       </div>
 
-      <div className="pl-10">
+      <div className="mt-6 lg:mt-0 pt-6 lg:pt-0 lg:pl-10">
         <h3 className="text-xl font-bold">PDF Download</h3>
         <button
           disabled={pdfGenerating}

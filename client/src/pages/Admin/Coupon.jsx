@@ -59,8 +59,8 @@ const Coupon = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 divide-x divide-gray-400">
-      <div className="mr-10">
+    <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-400">
+      <div className="lg:mr-10">
         <div>
           <label htmlFor="count" className="block text-sm font-medium leading-6 text-gray-900">
             How Many Coupon You Want To Add?
@@ -100,7 +100,7 @@ const Coupon = () => {
           {isLoading ? "Adding..." : "Add Coupon"}
         </button>
       </div>
-      <div className="pl-10">
+      <div className="mt-6 lg:mt-0 pt-6 lg:pt-0 lg:pl-10">
         <h3 className="text-xl font-bold">Status</h3>
         {!statusLoading && (
           <div className="mt-4">
@@ -110,7 +110,7 @@ const Coupon = () => {
         )}
       </div>
 
-      <div className="pl-10">
+      <div className="mt-6 lg:mt-0 pt-6 lg:pt-0 lg:pl-10">
         <h3 className="text-xl font-bold text-red-500">Be Careful</h3>
         <div className="mt-4">
           <div>
