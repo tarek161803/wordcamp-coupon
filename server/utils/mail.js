@@ -49,7 +49,7 @@ const sendMail = async (user) => {
         <p style="margin-top: 24px">
           But that's not all! Use this coupon below for a chance to
           <span style="color: #0088f7; font-weight: 700">Win an iPad</span> at our bonus raffle draw
-          <span style="color: #dd40b3; font-weight: 700">Today at 4 PM!</span>
+          <span style="color: #dd40b3; font-weight: 700">Today at 3 PM!</span>
         </p>
         <p style="margin-top: 24px; color: #0088f7; font-weight: 700">Your Token - ${user.coupon}</p>
         <p style="margin-top: 24px">
