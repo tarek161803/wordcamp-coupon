@@ -6,7 +6,7 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-app.use(cors({ origin: "https://www.webappick.info" }));
+app.use(cors());
 app.use(express.static("static"));
 app.use(express.json());
 
