@@ -4,7 +4,7 @@ const createOrUpdateGift = async (req, res) => {
   try {
     const { password, ...giftData } = req.body;
 
-    if (password !== "webappickwc@24") {
+    if (password !== "webappickwc@26") {
       return res.status(401).json({ status: "failed", message: "Unauthorized Access" });
     }
 
